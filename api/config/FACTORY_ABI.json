@@ -1,0 +1,25 @@
+[
+  {
+    "type": "function",
+    "name": "createCommunity",
+    "inputs": [
+      { "name": "name", "type": "string", "internalType": "string" },
+      {
+        "name": "initialReward",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "getContract",
+    "inputs": [
+      { "name": "communityName", "type": "string", "internalType": "string" }
+    ],
+    "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
+    "stateMutability": "view"
+  }
+]
