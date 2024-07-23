@@ -37,12 +37,19 @@ Hooops is a decentralized social network built on Core Chain and powered by the 
 
 ### Bot Commands
 
-- `/submit` - Submit a meme or humorous content.
 - `/tip @username amount` - Tip a user for their content.
-- `/challenge` - View and participate in daily challenges.
-- `/leaderboard` - View the top creators and participants.
-- `/vote` - Participate in governance decisions.
-- `/profile` - View user badges and achievements.
+- `/batch_tip @username amount, @username amount, ...` - Tip multiple users for their content.
+- `/wallet` - View your wallet details.
+- `/init rewardValue` - Initialize community with reward value.
+- `/register` - Register as a user.
+- `/contract` - View contract details.
+- `/balance` - View your balance.
+- `/rewards` - View your rewards.
+- `/community_balance` - View the community balance.
+- `/update_reward rewardValue` - Update the reward value.
+- `/withdraw` - Withdraw your funds.
+- `/fund amount` - Fund the community pool.
+- `/claim` - Claim your rewards.
 
 ## Technical Details
 
