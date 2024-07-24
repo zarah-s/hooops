@@ -32,6 +32,7 @@ Hooops is a decentralized social network built on Core Chain and powered by the 
 ### Prerequisites
 
 - Telegram account
+- Access to the Hooops Telegram bot: [Hooops Bot](https://t.me/HOOOPS_CORE_BOT)
 
 ## Usage
 
