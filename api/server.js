@@ -709,7 +709,7 @@ bot.onText(/\/balance/, async (msg) => {
   }
 });
 
-bot.onText(/\/reward_value/, async (msg) => {
+bot.onText(/\/community_reward/, async (msg) => {
   try {
     const chatType = msg.chat.type; // Get the chat type
     if (

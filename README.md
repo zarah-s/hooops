@@ -41,6 +41,7 @@ Hooops is a decentralized social network built on Core Chain and powered by the 
 - `/batch_tip @username amount, @username amount, ...` - Tip multiple users for their content.
 - `/wallet` - View your wallet details.
 - `/init rewardValue` - Initialize community with reward value.
+- `/community_reward` - Gets community reward value.
 - `/register` - Register as a user.
 - `/contract` - View contract details.
 - `/balance` - View your balance.

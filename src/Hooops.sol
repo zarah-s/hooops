@@ -3,6 +3,11 @@ pragma solidity ^0.8.13;
 import "./Community.sol";
 
 contract Hooops {
+    event CommunityInitialized(
+        address indexed communityAddress,
+        string indexed name,
+        uint indexed timestamp
+    );
     mapping(string => address) community;
 
     function getContract(
@@ -22,5 +27,10 @@ contract Hooops {
             initialReward
         );
         community[name] = address(new_community);
+        emit CommunityInitialized(
+            address(new_community),
+            name,
+            block.timestamp
+        );
     }
 }
