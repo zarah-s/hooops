@@ -709,6 +709,42 @@ bot.onText(/\/balance/, async (msg) => {
   }
 });
 
+bot.onText(/\/reward_value/, async (msg) => {
+  try {
+    const chatType = msg.chat.type; // Get the chat type
+    if (
+      chatType !== "channel" &&
+      chatType !== "group" &&
+      chatType !== "supergroup"
+    ) {
+      return;
+    }
+    if (
+      !(await checkGroup(msg.chat.title, msg.chat.id, msg.message_thread_id))
+    ) {
+      return;
+    }
+    if (!msg?.from?.username) return;
+    const contract = await process_contract(msg.from.username, msg.chat.title);
+    if (contract) {
+      const tx = await contract.getRewardValue(
+        await extract_address(msg.from.username)
+      );
+      await bot.sendMessage(
+        msg.chat.id,
+        `COMMUNITY REWARD IS: ${ethers.formatEther(tx)}`,
+        {
+          message_thread_id: msg.message_thread_id,
+          reply_to_message_id: msg.message_id,
+        }
+      );
+    }
+  } catch (error) {
+    await process_error(error, msg);
+    console.log("error", error);
+  }
+});
+
 bot.onText(/\/rewards/, async (msg) => {
   try {
     const chatType = msg.chat.type; // Get the chat type
@@ -1171,9 +1207,10 @@ bot.on("message", async (msg) => {
     return;
   }
 
-  if (msg.text.startsWith("/")) {
+  if (msg.text?.startsWith("/")) {
     return;
   }
+  if (msg.poll) return;
   if (!(await checkGroup(msg.chat.title, msg.chat.id, msg.message_thread_id))) {
     return;
   }

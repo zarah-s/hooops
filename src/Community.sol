@@ -147,6 +147,10 @@ contract Community {
         }
     }
 
+    function getRewardValue() external view returns (uint) {
+        return rewardAmount;
+    }
+
     function reward(address user) external OnlyOwner {
         require(rewardDeposit >= rewardAmount, "INSUFFICIENT_FUNDS");
         require(rewardAmount > 0, "NO_REWARD");
