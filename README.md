@@ -47,7 +47,7 @@ Hooops is a decentralized social network built on Core Chain and powered by the 
 - `/balance` - View your balance.
 - `/rewards` - View your rewards.
 - `/community_balance` - View the community balance.
-- `/update_reward rewardValue` - Update the reward value.
+- `/set_reward rewardValue` - Update the reward value.
 - `/withdraw` - Withdraw your funds.
 - `/fund amount` - Fund the community pool.
 - `/claim` - Claim your rewards.
