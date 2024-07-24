@@ -195,6 +195,7 @@ contract Community {
     }
 
     function fund() public payable {
+        rewardDeposit += msg.value;
         emit Deposit(msg.sender, msg.value, block.timestamp);
     }
 

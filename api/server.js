@@ -5,6 +5,7 @@ const cors = require("cors");
 const FACTORY_ABI = require("./config/FACTORY_ABI.json");
 const COMMUNITY_ABI = require("./config/COMMUNITY_ABI.json");
 const morgan = require("morgan");
+const BigNumber = require("bignumber.js");
 const {
   sequelize,
   User,
@@ -375,17 +376,10 @@ bot.onText(/\/batch_tip (.+)/, async (msg, match) => {
         amounts.push(ethers.parseEther(element.amount));
         total += Number(element.amount);
       }
-      // const total = amounts.reduce((accumulator, currentValue) => {
-      //   return Number(accumulator) + Number(currentValue);
-      // }, 0);
-      // console.log(total);
-      // console.log(users);
-      // console.log(amounts);
-      // console.log(total);
-      // console.log(ethers.parseEther(total.toString()));
+
       const tx = await (
         await contract.batchTip(users, amounts, {
-          value: ethers.parseEther(total.toString()),
+          value: ethers.parseEther(BigNumber(total).toFixed().toString()),
         })
       ).wait();
       if (tx.status) {
@@ -727,9 +721,7 @@ bot.onText(/\/community_reward/, async (msg) => {
     if (!msg?.from?.username) return;
     const contract = await process_contract(msg.from.username, msg.chat.title);
     if (contract) {
-      const tx = await contract.getRewardValue(
-        await extract_address(msg.from.username)
-      );
+      const tx = await contract.getRewardValue();
       await bot.sendMessage(
         msg.chat.id,
         `COMMUNITY REWARD IS: ${ethers.formatEther(tx)}`,
