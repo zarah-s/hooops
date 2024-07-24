@@ -58,10 +58,10 @@ Hooops is a decentralized social network built on Core Chain and powered by the 
 - **Smart Contracts**: Used for reward distribution, content ownership, and governance.
 - **Low-Fee Transactions**: Facilitates tipping and token transfers efficiently.
 
-### Content Management
+<!-- ### Content Management
 
 - **Decentralized Storage**: Uses IPFS or Arweave for hosting media content.
-- **NFT Integration**: Supports digital asset ownership and trading.
+- **NFT Integration**: Supports digital asset ownership and trading. -->
 
 ### Reward Mechanism
 
