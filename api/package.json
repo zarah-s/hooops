@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "export NODE_ENV=production && node server.js",
-    "dev": "export NODE_ENV=development  && nodemon server.js"
+    "dev": "export NODE_ENV=development && npx sequelize-cli db:migrate && nodemon server.js"
   },
   "dependencies": {
     "axios": "^1.7.2",
