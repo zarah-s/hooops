@@ -9,6 +9,7 @@ Hooops is a decentralized social network built on Core Chain and powered by the 
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Usage](#usage)
+  - [Community Setup](#community-setup)
   - [Bot Commands](#bot-commands)
 - [Technical Details](#technical-details)
   - [Core Chain Integration](#core-chain-integration)
@@ -33,8 +34,61 @@ Hooops is a decentralized social network built on Core Chain and powered by the 
 
 - Telegram account
 - Access to the Hooops Telegram bot: [Hooops Bot](https://t.me/HOOOPS_CORE_BOT)
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/get-npm) or [yarn](https://yarnpkg.com/)
+- [Git](https://git-scm.com/)
+- [ngrok](https://ngrok.com/) for exposing local servers to the internet
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/zarah-s/hooops.git
+   cd hooops
+   ```
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+   or
+   ```bash
+   yarn install
+   ```
+3. **Configure env:**
+
+   ```
+   make create-env
+   ```
+
+4. **Deploy and verify contract:**
+   ```
+   make deploy-contract
+   ```
+5. **Spin up ngrok tunnel:**
+   ```
+   ngrok http http://127.0.0.1:5000
+   ```
+6. **Start local server:**
+   ```
+   cd api/ && npm run dev
+   ```
 
 ## Usage
+
+### Community Setup
+
+To set up the Hooops bot as an administrator in your community, follow these steps:
+
+1. **Create a new Telegram group or use an existing group.**
+2. **Add the Hooops bot to your group as an administrator:**
+   - Open your Telegram group.
+   - Tap on the group name at the top.
+   - Click on the edit icon at the top right corner.
+   - Scroll down to "Administrators".
+   - Search for `@HOOOPS_CORE_BOT` and select the bot from the search results.
+   - Click "Save".
+
+Now, the Hooops bot should be set up as an administrator in your community and ready to facilitate engagement and rewards.
 
 ### Bot Commands
 
