@@ -11,7 +11,7 @@ module.exports = {
         defaultValue: DataTypes.UUIDV4,
       },
       encryptionKey: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
 
