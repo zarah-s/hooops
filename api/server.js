@@ -1116,7 +1116,8 @@ bot.on("callback_query", async (query) => {
                 where: {
                   user: query.message.reply_to_message.from.username,
                   group: query.message.chat.title,
-                  message_id: query.message.reply_to_message.message_id,
+                  message_id:
+                    query.message.reply_to_message.message_id.toString(),
                 },
               });
               bot.sendMessage(
