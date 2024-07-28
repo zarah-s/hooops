@@ -383,10 +383,14 @@ bot.onText(/\/batch_tip (.+)/, async (msg, match) => {
         })
       ).wait();
       if (tx.status) {
-        bot.sendMessage(chatId, `TIP SUCCESSFULL. ${EXPLORER_URI}/${tx.hash}`, {
-          message_thread_id: msg.message_thread_id,
-          reply_to_message_id: msg.message_id,
-        });
+        bot.sendMessage(
+          chatId,
+          `TIP SUCCESSFULL. ${EXPLORER_URI}/tx/${tx.hash}`,
+          {
+            message_thread_id: msg.message_thread_id,
+            reply_to_message_id: msg.message_id,
+          }
+        );
       } else {
         bot.sendMessage(
           chatId,
